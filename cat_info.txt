@@ -1,0 +1,6 @@
+2|John|purina|bengal
+4|Melman|proplan|australian mist
+5|Gloria|proplan|wood cat
+1|Fluffy|kittycat|siam
+6|Kelly|royal canin|abissin
+7|Maggy|purina|siam
