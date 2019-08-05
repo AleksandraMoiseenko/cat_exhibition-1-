@@ -201,31 +201,7 @@ public class Cat {
 
 	}
 
-	/*
-	 * public static HashMap<Integer, Cat> updateCatId(HashMap<Integer, Cat>
-	 * catlist, int old_id, int new_id) throws IOException { HashMap<Integer, Cat>
-	 * updateCatList = new HashMap<Integer, Cat>(); if(catlist.containsKey(new_id))
-	 * { System.out.
-	 * println("Cat with this id has already exist. Please change new id number.");
-	 * }else { Cat buffer=null; for (Map.Entry<Integer, Cat> cat :
-	 * catlist.entrySet()) { if(cat.getKey()==old_id) buffer=new
-	 * Cat(cat.getValue().getName(),cat.getValue().getFood(),cat.getValue().getBreed
-	 * (),cat.getValue().getOwners());
-	 * 
-	 * updateCatList.put(new_id, buffer); } catlist.remove(old_id);
-	 * 
-	 * updateCatList.putAll(catlist); for (Map.Entry<Integer, Cat> cat :
-	 * updateCatList.entrySet()) { System.out.println("Exhibition number: " +
-	 * cat.getKey()); cat.getValue().printcatinfo();
-	 * writeUsingOutputStream("Exhibition number: " + cat.getKey());
-	 * writeUsingOutputStream(cat.getValue().getName());
-	 * writeUsingOutputStream(cat.getValue().getBreed());
-	 * writeUsingOutputStream(cat.getValue().getFood()); for (Human owner :
-	 * cat.getValue().getOwners()) { writeUsingOutputStream(owner.getName());
-	 * writeUsingOutputStream(owner.getLast_name());
-	 * writeUsingOutputStream(owner.getAddress()); } } //return updateCatList; }
-	 * return updateCatList; }
-	 */
+	
 	public static void updateCatOwnersandAddress(int id, String name) throws IOException {// update cat owners by id(if
 																							// cat was bought after the
 																							// exhibition)
@@ -245,20 +221,6 @@ public class Cat {
 			}
 		}
 	}
-	// }
-
-	/*
-	 * public static HashMap<Integer, Cat> updateCatAddress(HashMap<Integer, Cat>
-	 * catlist, int id, String newAddress) throws IOException {// update // cat //
-	 * address // by // cat's // id HashMap<Integer, Cat> updateCatList = new
-	 * HashMap<Integer, Cat>(); for (Map.Entry<Integer, Cat> cat :
-	 * catlist.entrySet()) { for (Human owner : cat.getValue().getOwners()) { if
-	 * (cat.getKey() == id) owner.setAddress(newAddress); } }
-	 * updateCatList.putAll(catlist);
-	 * 
-	 * return updateCatList; }
-	 */
-
 	public static void deletecat(int id) throws IOException {// delete cat from list
 		Set<Cat> cats = new HashSet<Cat>();
 		cats.addAll(Cat.buildcatlist());
@@ -267,9 +229,6 @@ public class Cat {
 				cats.remove(cat);
 			}
 		}
-//Cat.write(cats);
-//for(Cat cat:cats)
-//	cat.printcatinfo();
 		String[] human_data = Cat.read(ownersInfoFileName).split("\n");
 
 		for (int i = 0; i < human_data.length; i++) {
